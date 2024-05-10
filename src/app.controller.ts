@@ -10,15 +10,4 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
-
-  @Get('aaa')
-  aaa() {
-    return 'aaa';
-  }
-
-  @Get('bbb')
-  // @UseGuards(LoginGuard)
-  bbb() {
-    return 'bbb';
-  }
 }

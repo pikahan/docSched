@@ -147,7 +147,6 @@ export class BotService {
   }
 
   async eventRec<T>(event: Msg) {
-    console.log(event);
     switch (event.eventRootType) {
         case AvailableIntentsEventsEnum.GUILD_MESSAGES:
         case AvailableIntentsEventsEnum.PUBLIC_GUILD_MESSAGES: {
