@@ -8,6 +8,7 @@ RUN npm install
 
 COPY . .
 
+RUN npm config set registry https://registry.npmmirror.com/
 RUN npm run build
 
 # production stage
@@ -22,6 +23,7 @@ COPY --from=build-stage /app/.env /app/.env
 
 WORKDIR /app
 
+RUN npm config set registry https://registry.npmmirror.com/
 RUN npm install --production
 
 EXPOSE 3002
