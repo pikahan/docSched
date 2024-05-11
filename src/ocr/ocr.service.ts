@@ -133,7 +133,7 @@ export class OcrService {
     const dataUrl = await this.getDateUrl(imagePath);
     // 创建Tesseract工作器
     const worker = await createWorker('chi_sim', 1, {
-      langPath: path.join(__dirname, '../..'),
+      langPath: path.join(__dirname, process.env.NODE_ENV === 'production' ? '..' : '../..'),
     });
     const option = await this.entityManager.findOneBy(Option, {
       id: optionId,

@@ -5,6 +5,7 @@ import { ResultFormatInterceptor } from './common/interceptor/result-format/resu
 import { MyLogger } from './MyLogger';
 import { WINSTON_LOGGER_TOKEN } from './winston/winston.module';
 
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useLogger(app.get(WINSTON_LOGGER_TOKEN));
