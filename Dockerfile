@@ -39,6 +39,7 @@ RUN apk add --update --no-cache \
 
 COPY --from=build-stage /app/dist /app
 COPY --from=build-stage /app/package.json /app/package.json
+COPY --from=build-stage /app/.env /app/.env
 COPY --from=build-stage /app/chi_sim.traineddata /app/chi_sim.traineddata
 COPY --from=build-stage /app/chi_sim.traineddata.gz /app/chi_sim.traineddata.gz
 COPY --from=build-stage /app/ecosystem.config.js /app/ecosystem.config.js
