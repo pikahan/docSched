@@ -57,12 +57,13 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         let password = configService.get('MYSQL_PASSWORD');
         let host = configService.get('MYSQL_HOST');
         const db = configService.get('DB_DATABASE');
+        const port = configService.get('MYSQL_PORT');
         return {
           type: "mysql",
-          host: host,
-          port: 3306,
-          username: username,
-          password: password,
+          host,
+          port,
+          username,
+          password,
           database: db,
           synchronize: true,
           logging: true,
